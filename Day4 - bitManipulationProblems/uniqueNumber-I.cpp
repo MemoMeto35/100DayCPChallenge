@@ -1,6 +1,7 @@
 // find the unique number in an array of integers that each integer is repeated exactly once except for one number; 
 // note that the XOR of two numbers is zero; eg, 4 ^ 4 = 0; 
 
+
 #include<iostream> 
 #include<array> 
 using namespace std; 
