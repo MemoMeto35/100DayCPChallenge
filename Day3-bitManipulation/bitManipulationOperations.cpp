@@ -28,6 +28,11 @@ void clearBitsInRange(int &n, int i, int j){
   int mask = a|b; 
   n = mask & n; 
 }
+void replaceBits(int &n, int i, int j, int m){
+  clearBitsInRange(n, i, j); 
+  int mask = m << i; 
+  n = n | mask; 
+}
 int main(){
   int n = 5; // 101
   getIthBit(n, 1); // 0
@@ -41,7 +46,11 @@ int main(){
   clearLastIBits(n, 3); // 0 = 000
     cout << n << endl;
   int a = 63; // 111111
-  clearBitsInRange(a, 1, 3);  // 49 = 110001  
+  clearBitsInRange(a, 1, 3);  // 57 = 110001  
   cout << a << endl; 
+  int b = 127; // 1111111
+  int c = 10; // 1010
+  replaceBits(b, 2, 5, c); // 107 = 1101011
+  cout << b << endl; 
 
 }
