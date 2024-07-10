@@ -2,7 +2,7 @@
 #include <array>
 
 using namespace std;
-int binary_search(int arr[], int n, int key){
+int binary_search(int arr[], int n, int key){ //O(log_2{N})
     int starting = 0;
     int ending = n - 1;
     int mid;
