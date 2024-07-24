@@ -1,5 +1,6 @@
+// this is called Travelling Salesman problem
 // O(2^n * n^2)
-// I don't know how the solution works by just pasted it here to get to it later
+// I don't know how the solution works by just pasted it here to get to it later;
 
 #include<iostream>
 #include<climits>
