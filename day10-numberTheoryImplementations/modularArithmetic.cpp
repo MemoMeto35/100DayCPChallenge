@@ -3,17 +3,17 @@
 using namespace std;
 const int P = 7, N = 1e5;
 int fact[N];
-int addm(int x, int y){
+int addm(int x, int y){ // O(1)
   return (x+y)%P;
 }
-int subm(int x, int y){
+int subm(int x, int y){ // O(1)
   return ((x-y)%P+P)%P;
 }
-int mulm(int x, int y){
+int mulm(int x, int y){ // O(1)
   return ((x%P)*(y%P))%P;
 }
 
-int powrm(int x, int y){
+int powrm(int x, int y){ // O(log y)
   int res = 1;
   while(y){
     if(y&1) res = mulm(res, x);
@@ -22,20 +22,20 @@ int powrm(int x, int y){
   }
   return res;
 }
-int inv(int x){
+int inv(int x){ // O log(P-2)
   return powrm(x, P-2); // this is derived from Fermat's Litte Theorem: x^P = x(mod P)
 }
-int divm(int x, int y){
+int divm(int x, int y){ // O(log y)
   return mulm(x, inv(y));}
 
-void calculate_factorials(){
+void calculate_factorials(){ // O(n)
   fact[0] = 1;
   for(int i =1; i<N; i++){
   fact[i] = mulm(fact[i-1], i); }}
 
-int ncr(int n, int r){
+int ncr(int n, int r){ // O(log y)
   return mulm(mulm(fact[n], inv(fact[r])), inv(fact[n-r])); }
-int npr(int n, int r){
+int npr(int n, int r){ // O(log y)
   return mulm(fact[n], inv(fact[n-r])); }
 
 int32_t main(){
