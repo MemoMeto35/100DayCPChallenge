@@ -14,10 +14,14 @@ long long int tiling(int n){
     return dp[n];
 
 }
+int tilingrec(int n){
+    if(n<4) return 1;
+    else return tiling(n-1) + tiling(n-4);
+}
 
 int main(){
     int n;
     cin >> n;
-
+    cout << tilingrec(n);
     cout << tiling(n);
 }
