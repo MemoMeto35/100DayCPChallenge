@@ -10,5 +10,6 @@ string s1(s.size(),'0'); // create a string with the same size as s and fill it 
 int c= count(s.begin(),s.end(),'1'); // count all the letters in s that are '1';
 string s = to_string(num); // convert int to string to make dealing with digits easier; 
 int num = stoi(s); // conver a string to s; 
+int gcd = __gcd(num1, num2); // find the gcd; 
 
 }
