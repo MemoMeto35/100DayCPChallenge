@@ -13,4 +13,7 @@ int num = stoi(s); // conver a string to s;
 int gcd = __gcd(num1, num2); // find the gcd; 
 bool is_prime[N];
 fill(is_prime, is_prime + N, true); // fill operator for arrays; 
+sort(freq.rbegin(), freq.rend()); // sort accending
+for(auto& it : map){pairs.push_back(it);} // iterate through a map and push to a vector of pairs;
+sort(pairs.begin(), pairs.end(), [](auto& a, auto& b){return a.second > b.second;}); // sort a vector of pairs accendingly;
 }
