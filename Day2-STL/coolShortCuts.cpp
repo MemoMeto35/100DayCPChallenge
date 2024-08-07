@@ -20,4 +20,15 @@ swap(head->val,head->next->val); // swapping ListNodes values;
 return result.substr(0, result.find_last_not_of(" ") + 1); // Remove trailing spaces
 found = str.find_last_of(ch); // find the last char ch; 
 found = str.find_last_not_of(ch); // find the last char that isnot ch; 
+upper_bound(right_sums.begin(), right_sums.end(), x) - lower_bound(right_sums.begin(), right_sums.end(), x); // returns the number of recurrences of x; 
+// lower_bound is the index of the first recurrence, upper_bound is the index of last recurrence + 1; 
+  
+for (int i = 0; i < (1 << n); i++) {
+  for (int j = 0; j < n; j++) {
+    if ((i >> j) & 1)
+      cout << arr[j]; // generate all subsets of array;
+  }
+  cout << endl;
+}
+  
 }
