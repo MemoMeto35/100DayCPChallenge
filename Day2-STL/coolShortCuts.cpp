@@ -17,4 +17,7 @@ sort(freq.rbegin(), freq.rend()); // sort accending
 for(auto& it : map){pairs.push_back(it);} // iterate through a map and push to a vector of pairs;
 sort(pairs.begin(), pairs.end(), [](auto& a, auto& b){return a.second > b.second;}); // sort a vector of pairs accendingly;
 swap(head->val,head->next->val); // swapping ListNodes values; 
+return result.substr(0, result.find_last_not_of(" ") + 1); // Remove trailing spaces
+found = str.find_last_of(ch); // find the last char ch; 
+found = str.find_last_not_of(ch); // find the last char that isnot ch; 
 }
