@@ -33,5 +33,13 @@ for (int i = 0; i < (1 << n); i++) {
 // Moving Zeros
 int l=0;
 for(int r=0;r<nums.size();r++){ if(nums[r]!=0){swap(nums[l],nums[r]); l++; }} // using two pointers; 
-  
+
+string sequence = "2943816729438167"; // the sequence of a magic square around the border;
+// Flattened indices for bordering elements of 3x3 grid
+vector<int> borderIndices = {0, 1, 2, 5, 8, 7, 6, 3};
+for (int i : borderIndices) {
+    int num = grid[row + i / 3][col + (i % 3)]; // nice formula
+    border += to_string(num);
+}
+return (sequence.find(border) != string::npos || sequenceReversed.find(border) != string::npos); // string::npos is to makes sure that the substring exists; 
 }
