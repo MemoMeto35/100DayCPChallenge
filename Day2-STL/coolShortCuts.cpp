@@ -42,4 +42,53 @@ for (int i : borderIndices) {
     border += to_string(num);
 }
 return (sequence.find(border) != string::npos || sequenceReversed.find(border) != string::npos); // string::npos is to makes sure that the substring exists; 
+/////////////////////Flood Fill Algorithm /////////////////////
+    // Directions for traversal: right, left, down, up
+    const vector<vector<int>> DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    // Flood fill algorithm to mark all cells in a region
+    void floodFill(vector<vector<int>>& expandedGrid, int row, int col) {
+        queue<pair<int, int>> q;
+        expandedGrid[row][col] = 1;
+        q.push({row, col});
+      
+        while (!q.empty()) {
+            auto [currentRow, currentCol] = q.front(); // nice trick for multible assigments
+            q.pop();
+            // Check all four directions from the current cell
+            for (const auto& direction : DIRECTIONS) {
+                int newRow = direction[0] + currentRow;
+                int newCol = direction[1] + currentCol;
+                // If the new cell is valid and unvisited, mark it and add to
+                // queue
+                if (isValidCell(expandedGrid, newRow, newCol)) {
+                    expandedGrid[newRow][newCol] = 1;
+                    q.push({newRow, newCol});
+                }
+            }
+        }
+    }
+
+    // Check if a cell is within bounds and unvisited
+    bool isValidCell(const vector<vector<int>>& expandedGrid, int row,
+                     int col) {
+        int n = expandedGrid.size();
+        return row >= 0 && col >= 0 && row < n && col < n &&
+               expandedGrid[row][col] == 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
