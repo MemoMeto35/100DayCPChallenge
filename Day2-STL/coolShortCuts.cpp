@@ -22,6 +22,13 @@ found = str.find_last_of(ch); // find the last char ch;
 found = str.find_last_not_of(ch); // find the last char that isnot ch; 
 upper_bound(right_sums.begin(), right_sums.end(), x) - lower_bound(right_sums.begin(), right_sums.end(), x); // returns the number of recurrences of x; 
 // lower_bound is the index of the first recurrence, upper_bound is the index of last recurrence + 1; 
+auto r = equal_range(array.begin(), array.end(), x); // Using equal_range, the code becomes shorter; 
+cout << r.second-r.first << "\n"; // finds the number of x elelments
+reverse(v.begin(), v.end()); // reverses a vector
+random_shuffle(v.begin(), v.end()); // random Shuffles a vector
+string s = "monkey"; 
+sort(s.begin(), s.end()); // ekmnoy
+string c = b.substr(3,4); // starts at index 3, and counts 4 chars;
   
 for (int i = 0; i < (1 << n); i++) {
   for (int j = 0; j < n; j++) {
