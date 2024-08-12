@@ -29,6 +29,10 @@ random_shuffle(v.begin(), v.end()); // random Shuffles a vector
 string s = "monkey"; 
 sort(s.begin(), s.end()); // ekmnoy
 string c = b.substr(3,4); // starts at index 3, and counts 4 chars;
+sortNums.insert(sortNums.begin()+insertedIndex, val); // insert at insertedIndex position, with value val; 
+this->k= k; // nice way to globalize a variable; 
+priority_queue<int, vector<int>, greater<int>> minHeap; // implementing mihHeap: minHeap.top() is the smallest; 
+
   
 for (int i = 0; i < (1 << n); i++) {
   for (int j = 0; j < n; j++) {
