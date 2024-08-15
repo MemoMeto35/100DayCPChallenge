@@ -88,11 +88,34 @@ return (sequence.find(border) != string::npos || sequenceReversed.find(border) !
                expandedGrid[row][col] == 0;
     }
 
+  // check if n is prime/////////////////
+bool isPrime(int n){
+  if(n <= 1)
+      return false;
+  if(n==2 || n==3)
+      return true;
+  if(n%2==0 || n%3==0)
+      return false;
+  for(int i=5; i*i<=n; i+=6){
+      if(n%i ==0 || n%(i+2)==0)
+          return false;
+  }
+  return true;
+}
+////////////////////check if n is palindrome ///////////
+bool isPalindrome(int n){
+    string str = std::to_string(n); // don't forget to use std:: it just makes the code faster; 
+    string temp = str;
+    std::reverse(str.begin(), str.end());
+    return str == temp;
+}
+  
+//////////////////// if a number is a palindrome with even number of digits --> it is divisable by 11; 
+  ///// so all prime palilndromes have an odd number of digits; 
 
-
-
-
-
+/* An integer val is on one of the diagonals of nums if there exists an integer i 
+for which nums[i][i] = val or an i for which nums[i][nums.size() - i - 1] = val.
+*/
 
 
 
