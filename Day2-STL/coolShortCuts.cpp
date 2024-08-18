@@ -117,8 +117,56 @@ bool isPalindrome(int n){
 for which nums[i][i] = val or an i for which nums[i][nums.size() - i - 1] = val.
 */
 
+/////////////Longest Palindromic subString//////////////
+class Solution {
+public:
+    std::string longestPalindrome(std::string s) {
+        if (s.length() <= 1) {
+            return s;
+        }
 
+        auto expand_from_center = [&](int left, int right) { // nice to expand both ways; 
+            while (left >= 0 && right < s.length() && s[left] == s[right]) {
+                left--;
+                right++;
+            }
+            return s.substr(left + 1, right - left - 1);
+        };
 
+        std::string max_str = s.substr(0, 1);
+
+        for (int i = 0; i < s.length() - 1; i++) {
+            std::string odd = expand_from_center(i, i);
+            std::string even = expand_from_center(i, i + 1);
+
+            if (odd.length() > max_str.length()) {
+                max_str = odd;
+            }
+            if (even.length() > max_str.length()) {
+                max_str = even;
+            }
+        }
+
+        return max_str;
+    }
+};
+/// CGD of strings///
+string gcdOfStrings(string str1, string str2) {
+    if((str1+str2)!=(str2+str1)) return ""; // nice way to check for the commutivity of two strings
+    int a = str1.size();
+    int b = str2.size(); 
+    int gcdR; 
+    if(a>b){
+        gcdR = gcd(a, b);
+    }
+    else gcdR = gcd(b, a);
+    return str1.substr(0, gcdR);
+
+}
+int gcd(int a, int b){
+    if(b==0) return a; 
+    return gcd(b, a%b); 
+}
 
 
 
