@@ -2,6 +2,8 @@ int main(){
 int minSum = *min_element(nums.begin(), nums.end()); // gets the smallest elemetn *for the pointer
 int maxSum = accumulate(nums.begin(), nums.end(), 0/*initial sum*/); // sums all elements; 
 partial_sum(arr.begin(),arr.end(),pref.begin()) // creates a prefix sum array in pref[];
+next_permutation(arr.begin(), arr.end()); // next permutation; takes O(n) to find the next permutation
+prev_permutation(arr.begin(), arr.end()); // previous permutations; takes O(n) to find the previous permutation; 
 int maxElement = *max_element(nums.begin(), nums.end()); // gets the max element;
 int mid = left + (right - left) / 2; // better than (right+left)/2 because it doesn't overflow;
 int res = (result + mod) % mod; // to get rid of negative mods;
@@ -38,6 +40,10 @@ this->k= k; // nice way to globalize a variable;
 priority_queue<int, vector<int>, greater<int>> minHeap; // implementing mihHeap: minHeap.top() is the smallest; 
 isdigit(chr); // checks if chr is digit; 
 isalpha(chr); // checks if chr is alphabet
+cout << bitset<32>(number); // prints the binary representation of number; 
+// for higher dimensional prefix sum: you can view prefix sum queries as inclusion exclusion and 
+//apply inclusion-exclusion principle to generalize higher dimensional prefix sum queries
+// and do it with a forloop over bitmask
   
 for (int i = 0; i < (1 << n); i++) {
   for (int j = 0; j < n; j++) {
