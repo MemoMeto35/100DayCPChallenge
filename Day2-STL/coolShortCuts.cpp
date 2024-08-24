@@ -23,6 +23,8 @@ found = str.find_last_of(ch); // find the last char ch;
 found = str.find_last_not_of(ch); // find the last char that isnot ch; 
 upper_bound(right_sums.begin(), right_sums.end(), x) - lower_bound(right_sums.begin(), right_sums.end(), x); // returns the number of recurrences of x; 
 // lower_bound is the index of the first recurrence, upper_bound is the index of last recurrence + 1; 
+// if lower_bound element doesn't exist the function returns an iterator of the first element that is not less than x; 
+(lower_bound(potions.begin(), potions.end(), (double)success / spells[i]) - potions.begin()); // return the index of the the first value not less than x; 
 auto r = equal_range(array.begin(), array.end(), x); // Using equal_range, the code becomes shorter; 
 cout << r.second-r.first << "\n"; // finds the number of x elelments
 reverse(v.begin(), v.end()); // reverses a vector
@@ -168,7 +170,21 @@ int gcd(int a, int b){
     if(b==0) return a; 
     return gcd(b, a%b); 
 }
-
+// counting subsets whose max and min add to less than a target; 
+      vector<long> dp(n + 1, 1);
+        for(int i = 1; i <= n; ++i){
+            dp[i] = (dp[i - 1] << 1) % k;
+        }
+        for(int i = 0, j = n - 1; i < n; ++i)
+        {
+            while(j >= i && nums[i] + nums[j] > target){
+                --j;
+            }
+            if(i > j){
+                continue;
+            } 
+            res = (res + dp[j - i]) % k; 
+        }
 
 
 
