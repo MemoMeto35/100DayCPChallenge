@@ -26,6 +26,8 @@ public:
     while(!minHeap.empty()){
       // pick out the edge with min weight; 
       auto best = minHeap.top(); 
+      minHeap.pop();
+      
       int weight = best.first; 
       int to = best.second; 
       if(visited[to]){
