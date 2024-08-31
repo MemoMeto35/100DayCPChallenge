@@ -1,7 +1,7 @@
 #include<iostream> 
 #include<vector> 
 using namespace std; 
-vector<int> bbellman_for(int V, inr src, vector<vector<ing>> edges){
+vector<int> bellman_ford(int V, inr src, vector<vector<ing>> edges){
   // create a vector
   vector<int> dist(V+1, INT_MAX);
   dist[src] = 0; 
