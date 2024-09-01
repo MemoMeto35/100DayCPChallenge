@@ -38,7 +38,7 @@ public:
         rank[s2] += rank[s1]; 
       }
       else{
-        pparent[s2] = s1; 
+        parent[s2] = s1; 
         rank[s1] += rank[s2];
       }
     }
