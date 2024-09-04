@@ -57,6 +57,7 @@ int main(){
 
   dfs(1, 0); 
 
-  cou << LengtFromUtoV(9, 12) << '\n'; 
+  cout << LengtFromUtoV(9, 12) << '\n'; 
+  
   return 0; 
 }
