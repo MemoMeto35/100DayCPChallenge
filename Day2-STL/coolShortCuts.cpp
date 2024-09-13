@@ -192,10 +192,17 @@ int gcd(int a, int b){
             } 
             res = (res + dp[j - i]) % k; 
         }
-
-
-
-
-
-
 }
+// Josephus Problem
+        while(s.size()>0){
+            int ans = *s.find_by_order(p);
+            // bug(ans);
+
+            cout << ans << " ";
+
+            s.erase(ans);
+
+            if(s.size()){
+                p = (p+k)%s.size(); // for updating; 
+            }
+        }
