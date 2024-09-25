@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std; 
-struct ndoe{
+struct node{
   node *nxt[26]; 
   bool is_end; 
   node(){
