@@ -1,5 +1,6 @@
 int main(){
 int minSum = *min_element(nums.begin(), nums.end()); // gets the smallest elemetn *for the pointer
+nums.erase(unique(nums.begin(), nums.end()), nums.end()); // delets consecutive repetition 
 int maxSum = accumulate(nums.begin(), nums.end(), 0/*initial sum*/); // sums all elements; 
 partial_sum(arr.begin(),arr.end(),pref.begin()) // creates a prefix sum array in pref[];
 next_permutation(arr.begin(), arr.end()); // next permutation; takes O(n) to find the next permutation
