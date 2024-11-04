@@ -53,6 +53,13 @@ for (int i = 0; i < (1 << n); i++) {
   }
   cout << endl;
 }
+
+// set.insert return a pair of iterator and boolean
+if(!seen.insert(pref[i]).second){ // greedy approach, the first segment to end;
+    cnt++;
+    seen = {pref[i]};
+}
+  
 // Moving Zeros
 int l=0;
 for(int r=0;r<nums.size();r++){ if(nums[r]!=0){swap(nums[l],nums[r]); l++; }} // using two pointers; 
