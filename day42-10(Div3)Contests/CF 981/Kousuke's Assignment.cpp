@@ -1,0 +1,53 @@
+/*
+    Always Stay Organized ||
+    Memoize Solutions to solve harder Ones;
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+#define int            long long int
+#define ar             array
+#define endl           "\n"
+#define all(p)         p.begin(), p.end()
+#define bug(...)       __f (#__VA_ARGS__, __VA_ARGS__)
+
+template <typename Arg1>
+void __f (const char* name, Arg1&& arg1) { cout << name << " : " << arg1 << endl; }
+template <typename Arg1, typename... Args>
+void __f (const char* names, Arg1&& arg1, Args&&... args)
+{
+    const char* comma = strchr (names + 1, ',');
+    cout.write (names, comma - names) << " : " << arg1 << " | "; __f (comma + 1, args...);
+}
+
+int n, m;
+const int maxN = 2e5;
+int pref[maxN];
+
+void solve() {
+    cin >> n;
+    for(int i =1; i<=n; ++i){
+        cin >> pref[i];
+        pref[i]+=pref[i-1];
+    }
+    set<int> seen;
+    int cnt = 0;
+    for(int i =0; i<=n; ++i){
+        if(!seen.insert(pref[i]).second){ // greedy approach, the first segment to end;
+            cnt++;
+            seen = {pref[i]};
+        }
+    }
+
+    cout << cnt << endl;
+}
+
+int32_t main()
+{
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+    int t = 1;
+    cin >> t;
+    while (t--) solve();
+    return 0;
+}
